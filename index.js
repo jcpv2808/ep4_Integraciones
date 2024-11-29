@@ -24,22 +24,6 @@ app.use('/api/mesero', require('./routes/mesero'))
 app.use('/api/orden', require('./routes/orden'))
 app.use('/api/platillo',require('./routes/platillo'))
 
-function generateAccessToken(mesero) {
-    return jwt.sign(mesero, process.env.SECRET, { expiresIn: '10m' });
-}
-
-function validateToken (req, res, next){
-    const token = req.headers['authorization']?.split(' ')[1];
-
-    if (!token) return res.status(403).send('Acceso denegado');
-
-    jwt.verify(token, process.env.SECRET, (err, user) => {
-        if (err) return res.status(403).send('Token inválido o expirado');
-        req.user = user;
-        next();
-    });
-}
-
 app.listen(config.port, ()=>{
     console.log(`Escuchando en el puerto: ${config.port} - http://localhost:${config.port}`)
 })
