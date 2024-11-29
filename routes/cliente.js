@@ -4,7 +4,7 @@ const clienteController = require('../controllers/clienteController.js')
 
 router.post('/crearCliente', clienteController.crearCliente)
 router.get('/listarCliente', clienteController.listarCliente)
-router.get('/consultaCliente:id', clienteController.consultaCliente)
+router.get('/consultaCliente/:id', clienteController.consultaCliente)
 router.put('/actualizarCliente/:id', clienteController.actualizarCliente)
 router.delete('/eliminarCliente/:id', clienteController.eliminarCliente)
 
