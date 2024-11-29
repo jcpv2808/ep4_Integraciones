@@ -4,7 +4,7 @@ const platilloController = require('../controllers/platilloController.js')
 
 router.post('/crearPlatillo', platilloController.crearPlatillo)
 router.get('/listarPlatillo', platilloController.listarPlatillo)
-router.delete('/consultaPlatillo/:id', platilloController.consultaPlatillo)
+router.get('/consultaPlatillo/:id', platilloController.consultaPlatillo)
 router.put('/actualizarPlatillo/:id', platilloController.actualizarPlatillo)
 router.delete('/eliminarPlatillo/:id', platilloController.eliminarPlatillo)
 
